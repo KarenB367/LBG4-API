@@ -1,5 +1,5 @@
 # REST API starter
-THIS HAS BEEN CHANGED BY KARENB367
+
 This application is the start point for Sprint 1 of the Lloyds Bank Group Modern Engineering Bootcamp Project Specification.
 
 ## Installation
