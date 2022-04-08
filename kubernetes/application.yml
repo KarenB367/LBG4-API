@@ -1,0 +1,39 @@
+#Create the service
+apiVersion: v1
+kind: Service
+metadata:
+  name: lbg4-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: lbg4-api
+  ports:
+  - port: 5000        # Defines the Service's port within the cluster
+    targetPort: 5000  # Defines the Pod's port
+---
+#Create the replica set
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lbg4-api
+  labels:
+    app: lbg4-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lbg4-api
+  template:
+    metadata:
+      labels:
+        app: lbg4-api
+    spec:
+      containers:
+      - name: lbg4-api
+        image: gcr.io/lbg-210322/karenb-lbg-image2:jenkins-Sprint2-19
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PORT
+          value: "5000"
+
