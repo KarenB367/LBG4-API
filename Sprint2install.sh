@@ -1,3 +1,5 @@
+
+
 #! /bin/bash
 
 #make sure you are in the correct directory
@@ -24,5 +26,6 @@ else
   docker run --name lbg-cont2 -d -e PORT=3276 -p 5000:3276 lbg-image2:latest
 
 fi 
+docker images
 
 
