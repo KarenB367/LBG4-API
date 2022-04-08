@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: lbg4-api
-        image: gcr.io/lbg-210322/karenb-lbg-image2:{{BUILD_TAG}}
+        image: gcr.io/lbg-210322/karenb-lbg-image2:{{VERSION}}
         ports:
         - containerPort: 5000
         env:
